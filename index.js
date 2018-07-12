@@ -8,10 +8,19 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+// tslint:disable-next-line
+const debug = require('debug')('mailchamp');
 const dns_1 = require("dns");
 const punycode_1 = require("punycode");
+/**
+ * Query DNS and get MX records for given email address.
+ *
+ * @param email - Email address to retrieve the MX records for
+ */
 exports.getMxRecords = (email) => {
+    debug(`getMxRecords(${email})`);
     const hostname = punycode_1.toASCII(email.split('@')[1]);
+    debug(`hostname = ${hostname}`);
     return new Promise((resolve, reject) => dns_1.resolveMx(hostname, (error, addresses) => {
         if (error) {
             reject(error);
@@ -23,3 +32,4 @@ exports.isValidEmail = (email) => __awaiter(this, void 0, void 0, function* () {
     const mxRecords = yield exports.getMxRecords(email);
     return mxRecords.length > 0;
 });
+//# sourceMappingURL=index.js.map

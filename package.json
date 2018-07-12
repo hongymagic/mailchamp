@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Check is given email address is valid by checking MX DNS records",
   "main": "index.js",
+  "types": "index.d.ts",
   "author": "hongymagic <hongymagic+github@me.com>",
   "license": "MIT",
   "private": false,
