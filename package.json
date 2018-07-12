@@ -2,6 +2,9 @@
   "name": "mailchamp",
   "version": "1.0.0",
   "description": "Check is given email address is valid by checking MX DNS records",
+  "engines": {
+    "node": ">= 8"
+  },
   "main": "index.js",
   "types": "index.d.ts",
   "author": "hongymagic <hongymagic+github@me.com>",
