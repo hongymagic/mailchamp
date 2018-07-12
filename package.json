@@ -1,6 +1,6 @@
 {
   "name": "mailchamp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Check if given email address is valid by checking MX DNS records",
   "engines": {
     "node": ">= 8"
