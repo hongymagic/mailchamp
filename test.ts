@@ -1,3 +1,5 @@
+jest.mock('dns');
+
 import { getMxRecords, isValidEmail } from './index';
 
 describe('getMxRecords', () => {
