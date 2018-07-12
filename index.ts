@@ -33,6 +33,10 @@ export const getMxRecords = (email: string): Promise<MxRecord[]> => {
 };
 
 export const isValidEmail = async (email: string): Promise<boolean> => {
-  const mxRecords = await getMxRecords(email);
-  return mxRecords.length > 0;
+  try {
+    const mxRecords = await getMxRecords(email);
+    return mxRecords.length > 0;
+  } catch (err) {
+    return false;
+  }
 };

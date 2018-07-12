@@ -29,7 +29,12 @@ exports.getMxRecords = (email) => {
     }));
 };
 exports.isValidEmail = (email) => __awaiter(this, void 0, void 0, function* () {
-    const mxRecords = yield exports.getMxRecords(email);
-    return mxRecords.length > 0;
+    try {
+        const mxRecords = yield exports.getMxRecords(email);
+        return mxRecords.length > 0;
+    }
+    catch (err) {
+        return false;
+    }
 });
 //# sourceMappingURL=index.js.map

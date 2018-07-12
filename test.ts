@@ -22,3 +22,15 @@ describe('getMxRecords', () => {
     }
   });
 });
+
+describe('isValidEmail', () => {
+  it(
+    'should return true for email with a valid domain',
+    async () => expect(await isValidEmail('user@gmail.com')).toBe(true)
+  );
+
+  it(
+    'should return false for email with an invalid domain',
+    async () => expect(await isValidEmail('user@example.com')).toBe(false)
+  );
+});
